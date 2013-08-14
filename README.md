@@ -15,7 +15,7 @@ Dependencies:
 Instructions:
 -------------
   ``` bash
-  git clone https://githube.com/antonva/ircstream  
+  git clone https://github.com/antonva/ircstream  
   npm install
   node server.js
   ```
