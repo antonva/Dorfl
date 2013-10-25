@@ -22,12 +22,15 @@ eventSystem.on("now_playing", function (track) {
     ircbot.bot.say(IRC_CHANNELS, 'Now Playing: ' +  track.artist['#text'] + " - " + track.name);
 });
 
+//Music must have triggered some kind of response.
 eventSystem.on("trigger_response", function(type, from, to, message) {
     switch (type) {
+        //Private message.
         case 'pm':
             ircbot.bot.say(from, message);
         break;
         
+        //Channel message.
         case 'chan':
             ircbot.bot.say(to, message);
         break;
