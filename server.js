@@ -9,6 +9,7 @@ var clc          = require('cli-color'),
     eventSystem  = require('./modules/eventSystem.js'),
     lastfmModule = require('./modules/lastfm.js'),
     ircModule    = require('./modules/irc.js');
+    whoisModule  = require('./modules/whois.js');
 
 var ircbot;
 var lfm;
@@ -21,6 +22,14 @@ eventSystem.on("now_playing", function (track) {
     ircbot.bot.say(IRC_CHANNELS, 'Now Playing: ' +  track.artist['#text'] + " - " + track.name);
 });
 
-eventSystem.on("trigger_response", function(from, to, message) {
-    //make logic here... 
+eventSystem.on("trigger_response", function(type, from, to, message) {
+    switch (type) {
+        case 'pm':
+            ircbot.bot.say(from, message);
+        break;
+        
+        case 'chan':
+            ircbot.bot.say(to, message);
+        break;
+    }
 });

@@ -1,13 +1,14 @@
 var whois  = require('node-whois');
 var events = require('events'); 
-var eventEmitter = new events.EventEmitter();
-//var eventSystem = require('./modules/eventSystem.js');
+var eventSystem = require('./eventSystem.js');
 
 //Register the module events.
-eventEmitter.on('whois', function (from, to, message) {
-    console.log('Whois is working...');
+eventSystem.on('whois', function (from, to, data) {
+    whois.lookup(data, function(err, data) {
+        eventSystem.emit('trigger_response', 'pm', from, to, data); 
+    });
 });
 
-whois.lookup(message, function(err, data) {
-    console.log(err, data)
-});
+//whois.lookup(message, function(err, data) {
+//    console.log(err, data)
+//});

@@ -1,0 +1,11 @@
+###
+# Ignore NPM related stuff.
+###
+
+node_modules/
+
+###
+# Ignore VIm's .swp
+###
+
+*.swp

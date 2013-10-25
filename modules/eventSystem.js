@@ -13,11 +13,6 @@ EventSystem = function () {
     this.irc_config_loaded = function () {
         this.emit('irc_config_loaded');
     };
-    //make a 
-    //.this.register function that makes modules register their own events.
-    //this.register = function (name, trigger) {
-    //    this.name()
-    //}
     //IRC events.
     //Last.FM events.
     this.now_playing = function (data) {
@@ -30,8 +25,9 @@ EventSystem = function () {
     };
 
     //Trigger Parser.
-    this.trigger_parser = function (from, to, message) {
-        this.emit('trigger_parser', from, to, message);
+    this.trigger_parser = function (trigger, from, to, data) {
+        console.log(trigger);
+        this.emit(trigger, from, to, data);
     };
 };
 util.inherits(EventSystem, events.EventEmitter);

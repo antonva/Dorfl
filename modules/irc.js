@@ -33,7 +33,7 @@ IrcBot = function () {
     console.log('netError: ' + message);
     });
     this.bot.addListener('pm', function (from, message) {
-    console.log(from + ' => ME: ' + message);
+    console.log(from + ' -> ME: ' + message);
     });
 
     //Switches get stitches.
@@ -69,6 +69,6 @@ function msgParser(from, to, message) {
         }
         console.log("space is located at: " + len, " and the trigger is: " + trigger);
         //eventSystem.trigger_parser(from, to, msg);        
-        eventSystem.trigger_parser(from, to, trigger);
+        eventSystem.trigger_parser(trigger,from, to, msg);
     }
 }
