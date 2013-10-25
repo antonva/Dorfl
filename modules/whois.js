@@ -2,7 +2,6 @@
 
 //Dependencies.
 var whois  = require('whois-available');
-var events = require('events'); 
 var eventSystem = require('./eventSystem.js');
 
 //Register the module events.

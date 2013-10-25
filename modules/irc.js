@@ -7,16 +7,17 @@ IrcBot = function () {
     this.bot = new irc.Client(IRC_SERVER, IRC_NICK, {
         debug:       true,
         showErrors:  true,
-        userName:    'Dolan',     //TODO: Move to config?
-        realName:    'Dolan Duck',//TODO: Move to config?
+        userName:    IRC_USERNAME,
+        realName:    IRC_REALNAME,
         port:        IRC_PORT,
         channels:    IRC_CHANNELS,
-        secure:      true,
-        selfSigned:  true,
+        secure:      IRC_SSL,
+        selfSigned:  IRC_SELFSIGNED,
         certExpired: true,
-        stripColors: true         //Must have.
+        stripColors: true         //Strips colour and other control characters from messages, very useful.
     });
-    // IRC Bot Listeners
+
+    // IRC Bot Listeners. TODO: Implement logging to files and not console.
     this.bot.addListener('connect', function (message) {
     console.log('Connected');
     });
@@ -36,7 +37,7 @@ IrcBot = function () {
     console.log(from + ' -> ME: ' + message);
     });
 
-    //Switches get stitches.
+    //Send message events to our parsing function.
     this.bot.addListener('message', function (from, to, message) {
     msgParser(from, to, message);
     });
@@ -45,7 +46,7 @@ IrcBot = function () {
 function msgParser(from, to, message) {
     var msg     = message.toLowerCase();
     if (msg[0] == IRC_TRIGGER) {
-        //here be trigger detection + spaces.
+        //here be trigger detection.
         var len = msg.indexOf(" ",1);
         var trigger;
         if (len == -1) {
@@ -53,8 +54,8 @@ function msgParser(from, to, message) {
         } else {
             trigger = msg.slice(1,len);
         }
-        //msg.split(' ')[1] to get the first argument.
-        //TODO: Rework msg.split so that we send the entire msg excluding the original trigger.
-        eventSystem.trigger_parser(trigger,from, to, msg.split(' ')[1]);
+        //mesg contains entire message excluding the original trigger. 
+        mesg =  msg.substring(len+1,msg.length);
+        eventSystem.trigger_parser(trigger,from, to, mesg);
     }
 }
