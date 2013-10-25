@@ -39,24 +39,10 @@ IrcBot = function () {
     //Switches get stitches.
     this.bot.addListener('message', function (from, to, message) {
     msgParser(from, to, message);
-    //switch (message) {
-    //    case '!music': 
-    //        console.log(from + ' -> ' + to + ':musictrig: ' + message);
-    //    break;
-    //    case '.whois':
-    //        console.log(from + ' -> ' + to + ': ' + message);
-    //        this.bot.say(to, "fart");
-    //    break;
-    //    default: 
-    //        console.log(from + ' -> ' + to + ': ' + message);
-    //    break;
-    //}
     });
 };
 
 function msgParser(from, to, message) {
-    var user    = from;
-    var channel = to;
     var msg     = message.toLowerCase();
     if (msg[0] == IRC_TRIGGER) {
         //here be trigger detection + spaces.
@@ -67,8 +53,8 @@ function msgParser(from, to, message) {
         } else {
             trigger = msg.slice(1,len);
         }
-        console.log("space is located at: " + len, " and the trigger is: " + trigger);
-        //eventSystem.trigger_parser(from, to, msg);        
-        eventSystem.trigger_parser(trigger,from, to, msg);
+        //msg.split(' ')[1] to get the first argument.
+        //TODO: Rework msg.split so that we send the entire msg excluding the original trigger.
+        eventSystem.trigger_parser(trigger,from, to, msg.split(' ')[1]);
     }
 }

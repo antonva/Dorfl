@@ -1,6 +1,4 @@
 //Config loading module for SpamBot.
-//Dependencies.
-eventSystem = require('./eventSystem.js');
 
 //Last.FM Module config variables.
 LFM_USER    = "azk-";

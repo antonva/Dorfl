@@ -2,20 +2,17 @@
     "name": "stream-bot",
     "version": "0.0.1",
     "author": "Anton Vilhelm Ásgeirsson <anton.asgeirsson@wellplayed.org>",
-    "description": "An ircbot for our Twitch.tv stream channel providing stats from Obscene and other sources",
+    "description": "An ircbot for silly and nonsensical things",
     "scripts": {
         "start": "node server.js"
     },
     "dependencies": {
-        "cli-color"  : ">= 0.2.1",
-        "irc-colors" : "*",
-        "irc"        : ">= 0.3.4",
-        "firebase"   : "*",
-        "lastfm"     : "*",
-        "express"    : "3.x",
-        "socket.io"  : "*",
-        "jade"       : "*",
-        "node-whois" : "*"
+        "cli-color"       : ">= 0.2.1",
+        "irc-colors"      : "*",
+        "irc"             : ">= 0.3.4",
+        "lastfm"          : "*",
+        "whois-available" : "*",
+        "imdb-api"        : "*"
     },
     "engines": {
         "node": ">= 0.8"
