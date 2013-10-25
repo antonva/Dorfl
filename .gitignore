@@ -1,11 +1,24 @@
-###
-# Ignore NPM related stuff.
-###
+# Created by http://gitignore.io
+# ### vim ###
+ .*.s[a-w][a-z]
+ *.un~
+ Session.vim
+ .netrwhist
+ *~
+#
+# ### Node ###
+ lib-cov
+ *.seed
+ *.log
+ *.csv
+ *.dat
+ *.out
+ *.pid
+ *.gz
 
-node_modules/
+ pids
+ logs
+ results
 
-###
-# Ignore VIm's .swp
-###
-
-.*.swp*
+ npm-debug.log
+ node_modules

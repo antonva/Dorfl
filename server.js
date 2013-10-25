@@ -1,17 +1,18 @@
 #!/usr/bin/env node
 
 //Dependencies.
-var clc          = require('cli-color'),
-    util         = require('util'),
-    ic           = require('irc-colors'),
-    whois        = require('whois-available'),
-    imdb         = require('imdb-api'),
-    config       = require('./modules/config.js'),
-    eventSystem  = require('./modules/eventSystem.js'),
-    lastfmModule = require('./modules/lastfm.js'),
-    ircModule    = require('./modules/irc.js'),
-    whoisModule  = require('./modules/whois.js'),
-    imdbModule   = require('./modules/imdb.js');
+var clc           = require('cli-color'),
+    util          = require('util'),
+    ic            = require('irc-colors'),
+    whois         = require('whois-available'),
+    imdb          = require('imdb-api'),
+    config        = require('./modules/config.js'),
+    eventSystem   = require('./modules/eventSystem.js'),
+    lastfmModule  = require('./modules/lastfm.js'),
+    ircModule     = require('./modules/irc.js'),
+    whoisModule   = require('./modules/whois.js'),
+    //imdbModule    = require('./modules/imdb.js'); //disabled until further notice.
+    youtubeModule = require('./modules/youtube.js')
 
 var ircbot = new IrcBot();
 //var lfm    = new LastfmStream();
