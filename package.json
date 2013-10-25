@@ -7,15 +7,15 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "cli-color" : ">= 0.2.1",
-        "irc-colors": "*",
-        "irc"       : ">= 0.3.4",
-        "firebase"  : "*",
-        "lastfm"    : "*",
-        "express"   : "3.x",
-        "socket.io" : "*",
-        "jade"      : "*"
-
+        "cli-color"  : ">= 0.2.1",
+        "irc-colors" : "*",
+        "irc"        : ">= 0.3.4",
+        "firebase"   : "*",
+        "lastfm"     : "*",
+        "express"    : "3.x",
+        "socket.io"  : "*",
+        "jade"       : "*",
+        "node-whois" : "*"
     },
     "engines": {
         "node": ">= 0.8"

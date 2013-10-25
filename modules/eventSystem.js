@@ -13,22 +13,26 @@ EventSystem = function () {
     this.irc_config_loaded = function () {
         this.emit('irc_config_loaded');
     };
-
+    //make a 
+    //.this.register function that makes modules register their own events.
+    //this.register = function (name, trigger) {
+    //    this.name()
+    //}
     //IRC events.
-    //TODO: going to event out all text in channel so that http module and similar can create "viewports".
     //Last.FM events.
     this.now_playing = function (data) {
         this.emit('now_playing', data);
     };
-    //Sponsor events.
-    this.sponsors = function(data) {
-        this.emit('sponsors', data);
+
+    //Trigger Response.
+    this.trigger_response = function (from, to, message) {
+        this.emit('trigger_response', from, to, message);
     };
 
-    this.sponsors_loaded = function() {
-        this.emit('sponsors_loaded');
+    //Trigger Parser.
+    this.trigger_parser = function (from, to, message) {
+        this.emit('trigger_parser', from, to, message);
     };
-    //HTTP events.
 };
 util.inherits(EventSystem, events.EventEmitter);
 module.exports = new EventSystem();
