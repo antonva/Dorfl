@@ -14,7 +14,9 @@
         "lastfm"          : "*",
         "whois-available" : "*",
         "imdb-api"        : "*",
-        "youtube-feeds"   : "*"
+        "youtube-feeds"   : "*",
+        "google-tools"    : "*",
+        "ddg-api"         : "*"
     },
     "engines": {
         "node": ">= 0.8"
