@@ -12,6 +12,8 @@ Dependencies:
   sudo npm install -g n
   sudo n stable
   ``` 
+  
+  In the near future log.js will depend on postgres. I'll make sure to include an easy way to skip it.
 Instructions:
 -------------
   ``` bash
