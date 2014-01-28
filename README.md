@@ -1,7 +1,8 @@
-Ircstream
+Dorfl
 =========
+>"we can rebake him, we have the pottery."
 
-A modular irc bot to serve as a bridge between Obscene and Twitch.tv chat.
+A modular irc bot written in javascript using node.js.
 
 Dependencies:
 -------------
@@ -13,7 +14,8 @@ Dependencies:
   sudo n stable
   ``` 
   
-  In the near future log.js will depend on postgres. I'll make sure to include an easy way to skip it.
+  In the near future I will be adding proper logging.
+  
 Instructions:
 -------------
   ``` bash
