@@ -1,7 +1,7 @@
 {
-    "name": "stream-bot",
-    "version": "0.0.1",
-    "author": "Anton Vilhelm Ásgeirsson <anton.asgeirsson@wellplayed.org>",
+    "name": "dorfl",
+    "version": "0.1.2",
+    "author": "Anton Vilhelm Ásgeirsson <anton@antonvilhelm.is>",
     "description": "An ircbot for silly and nonsensical things",
     "scripts": {
         "start": "node server.js"
