@@ -13,12 +13,7 @@ var util          = require('util'),
     ddgModule     = require('./modules/duckduckgo.js')
 
 var ircbot = new IrcBot();
-//var lfm    = new LastfmStream();
 
-//Last.FM event listeners.
-//eventSystem.on("now_playing", function (track) {
-//    ircbot.bot.say(IRC_CHANNELS, 'Now Playing: ' +  track.artist['#text'] + " - " + track.name);
-//});
 
 //Music must have triggered some kind of response.
 eventSystem.on("trigger_response", function(type, from, to, message) {
@@ -31,6 +26,11 @@ eventSystem.on("trigger_response", function(type, from, to, message) {
         //Channel message.
         case 'chan':
             ircbot.bot.say(to, message);
+        break;
+        
+        //Notice.
+        case 'notice':
+            ircbot.bot.notice(from, message)
         break;
     }
 });
